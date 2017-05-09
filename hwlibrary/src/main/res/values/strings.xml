@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">HwLibrary</string>
+
+    <string name="pull_listview_header_hint_normal">下拉刷新</string>
+    <string name="pull_listview_header_hint_ready">松开刷新数据</string>
+    <string name="pull_listview_header_hint_loading">正在加载</string>
+    <string name="pull_listview_header_last_time">上次更新时间:</string>
+    <string name="pull_listview_footer_hint_normal">加载更多</string>
+    <string name="pull_listview_footer_hint_ready">松开载入更多</string>
+    <string name="time_second">秒</string>
+
 </resources>

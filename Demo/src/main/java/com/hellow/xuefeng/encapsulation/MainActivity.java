@@ -1,13 +1,21 @@
 package com.hellow.xuefeng.encapsulation;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.hellow.xuefeng.hwlibrary.activity.AbsBaseActivity;
+
+public class MainActivity extends AbsBaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayoutID() {
+        Log.e("111","hahaha");
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void init(Bundle savedInstanceState, View contentView) {
+
     }
 }

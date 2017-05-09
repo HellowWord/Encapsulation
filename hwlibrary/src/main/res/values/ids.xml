@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="tag_base"></item>
+
+    <item type="id" name="tag_home_first"></item>
+    <item type="id" name="tag_home_second"></item>
+    <item type="id" name="tag_home_third"></item>
+    <item type="id" name="tag_home_fourth"></item>
+
+    <item name="swipe_target" type="id" />
+    <item name="swipe_refresh_header" type="id" />
+    <item name="swipe_load_more_footer" type="id" />
+    <item name="recycleview_sort" type="id" />
+    <item name="tag_adapter_helper" type="id"></item>
 </resources>

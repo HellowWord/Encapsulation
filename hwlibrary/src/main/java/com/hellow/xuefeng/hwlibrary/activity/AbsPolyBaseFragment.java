@@ -20,15 +20,13 @@ import butterknife.Unbinder;
  */
 public abstract class AbsPolyBaseFragment extends AbsBaseFragment {
     private static final String TAG = "AbsPolyBaseFragment";
-    public static final int FRAGMENT_STATUS_COUNTS = 5;
+    public static final int FRAGMENT_STATUS_COUNTS = 4;
     public static final int FRAGMENT_STATUS_LOADING = 0;//加载
     public static final int FRAGMENT_STATUS_CONTENT = 1;//加载数据成功
     public static final int FRAGMENT_STATUS_EMPTY = 2;//空数据
     public static final int FRAGMENT_STATUS_ERROR = 3;//加载数据出错
-    public static final int FRAGMENT_STATUS_NOLONGIN = 4;
 
     private ViewAnimator mViewAnimator;
-    private int mNoLonginLayoutID;
     private Unbinder mUnbinder;
 
 
@@ -44,8 +42,6 @@ public abstract class AbsPolyBaseFragment extends AbsBaseFragment {
 
         mViewAnimator.addView(inflater.inflate(getErrorLayoutID(), null), FRAGMENT_STATUS_ERROR);
 
-        mViewAnimator.addView(inflater.inflate(getNoLonginLayoutID(), null), FRAGMENT_STATUS_NOLONGIN);
-
         mViewAnimator.setDisplayedChild(FRAGMENT_STATUS_LOADING);
 
         return mViewAnimator;
@@ -59,7 +55,6 @@ public abstract class AbsPolyBaseFragment extends AbsBaseFragment {
         initContent(savedInstanceState, getStatusView(FRAGMENT_STATUS_CONTENT));
         initEmpty(savedInstanceState, getStatusView(FRAGMENT_STATUS_EMPTY));
         initError(savedInstanceState, getStatusView(FRAGMENT_STATUS_ERROR));
-        initNoLogin(savedInstanceState, getStatusView(FRAGMENT_STATUS_NOLONGIN));
     }
 
 
@@ -100,7 +95,9 @@ public abstract class AbsPolyBaseFragment extends AbsBaseFragment {
 
     @Override
     public void onDestroyView() {
-        mUnbinder.unbind();
+        if (mUnbinder!=null){
+            mUnbinder.unbind();
+        }
         super.onDestroyView();
     }
 
@@ -130,7 +127,4 @@ public abstract class AbsPolyBaseFragment extends AbsBaseFragment {
 
     protected abstract void initError(Bundle savedInstanceState, View errorView);
 
-    protected abstract int getNoLonginLayoutID();
-
-    protected abstract void initNoLogin(Bundle savedInstanceState, View errorView);
 }

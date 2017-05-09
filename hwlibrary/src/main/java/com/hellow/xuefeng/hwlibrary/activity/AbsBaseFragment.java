@@ -77,7 +77,9 @@ public abstract class AbsBaseFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        mUnbinder.unbind();
+        if (mUnbinder!=null){
+            mUnbinder.unbind();
+        }
         super.onDestroyView();
     }
 
